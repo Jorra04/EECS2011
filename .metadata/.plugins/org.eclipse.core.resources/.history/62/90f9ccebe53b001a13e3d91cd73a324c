@@ -1,6 +1,6 @@
 package binarySearch;
 import java.util.*;
-public class binarySearch  {
+public class binarySearch implements Comparable<binarySearch> {
 	public static boolean binarySearchAlgo(List<Object> myList,int val ){
 		if(myList.isEmpty()) {
 			return false;
@@ -11,19 +11,16 @@ public class binarySearch  {
 		if(e.equals(val)) {
 			return true;
 		}
-		
-		return false;
-//		else if(e) {
-//			return binarySearchAlgo(myList.subList(mid, myList.size()),val);
-//		}
-//	}
-//
-//	@Override
-//	public int compareTo(binarySearch o) {
-//		// TODO Auto-generated method stub
-//
-//	}
+		else if(e) {
+			return binarySearchAlgo(myList.subList(mid, myList.size()),val);
+		}
+	}
+
+	@Override
+	public int compareTo(binarySearch o) {
+		// TODO Auto-generated method stub
+
+	}
 
 	
-}
 }
