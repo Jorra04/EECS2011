@@ -1,0 +1,9 @@
+package binarySearch;
+import java.util.*;
+public class binarySearch {
+	public static List<Object> binarySearchAlgo(List<Object> myList,int i, int j, int k ){
+		if(myList.isEmpty()) {
+			return false;
+		}
+	}
+}

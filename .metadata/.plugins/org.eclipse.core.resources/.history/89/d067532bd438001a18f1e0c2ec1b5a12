@@ -1,0 +1,18 @@
+package binarySearch;
+import java.util.*;
+public class binarySearch Comparable <T> {
+	public static boolean binarySearchAlgo(List<Object> myList,int val ){
+		if(myList.isEmpty()) {
+			return false;
+		}
+		int mid = myList.size()/2;
+		Object e = myList.get(mid);
+		
+		if(e.equals(val)) {
+			return true;
+		}
+		else if() {
+			return binarySearchAlgo(myList.subList(mid, myList.size()),val);
+		}
+	}
+}
