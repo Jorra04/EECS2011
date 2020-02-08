@@ -1,5 +1,0 @@
-package binarySearch;
-import java.util.*;
-public class binarySearch {
-	public static List<Object> binarySearch(List<Object> myList, )
-}
