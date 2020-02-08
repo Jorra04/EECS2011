@@ -1,3 +1,4 @@
+package Q1;
 /***********************************
 * CSE2011 - Assignment 2
 * File name: symm_main.java

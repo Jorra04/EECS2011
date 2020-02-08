@@ -65,7 +65,6 @@ public static boolean sum_rec( int[] A, int n, int k ){
 	int j = n-1;
 	
 	return sum_recHelper(A, k, i, j);
-
 }
 // end sum_rec
 private static boolean sum_recHelper(int[] a, int finder, int i, int j) {
@@ -76,9 +75,7 @@ private static boolean sum_recHelper(int[] a, int finder, int i, int j) {
     if (a[i] + a[j] < finder)
         return sum_recHelper(a, finder, i + 1, j);
     return sum_recHelper(a, finder, i, j - 1);
-}
-
-
+    }
 } // end class
 
 
