@@ -1,20 +1,6 @@
 INDEX VERSION 1.131+C:\Users\jorra\OneDrive\Documents\School\York\Second Year\EECS 2011\EECS2011\.metadata\.plugins\org.eclipse.jdt.core
-100233679.index
-1073142641.index
-1195992240.index
-2191428221.index
 1922806976.index
-4076271804.index
 1792686054.index
-3470056599.index
 2360426812.index
-2726578571.index
-2713061661.index
-3721133040.index
 176877140.index
-496545408.index
-6215810.index
-491742131.index
 3398258862.index
-1062338447.index
-3537676846.index
