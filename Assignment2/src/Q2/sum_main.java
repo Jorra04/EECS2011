@@ -53,6 +53,7 @@ public static void main( String[] args )
       k = input.nextInt();
 
    }  // end while
+   input.close();
 
 } // end main
 

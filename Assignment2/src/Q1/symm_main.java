@@ -42,6 +42,7 @@ public static void main( String[] args )
       // Enter the number of elements of the next array
       n = input.nextInt();
    }  // end while
+   input.close();
 
 }  // end main
 
