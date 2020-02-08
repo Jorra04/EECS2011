@@ -15,7 +15,7 @@ public class sum {
 	 * EXHAUSTIVE ALGORITHM Returns true if array A contains two elements whose sum
 	 * is k. Returns false otherwise. n is the number of elements A contains.
 	 *
-	 * The running time of your algorithm is O( ). You may add a brief explanation
+	 * The running time of your algorithm is O(n^2). You may add a brief explanation
 	 * here if you wish.
 	 */
 
@@ -40,7 +40,7 @@ public class sum {
 	 * RECURSIVE ALGORITHM Returns true if array A contains two elements whose sum
 	 * is k. Returns false otherwise. n is the number of elements A contains.
 	 *
-	 * The running time of your algorithm is O( ). You may add a brief explanation
+	 * The running time of your algorithm is O(n). You may add a brief explanation
 	 * here if you wish.
 	 */
 

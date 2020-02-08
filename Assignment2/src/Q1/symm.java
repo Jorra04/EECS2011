@@ -14,7 +14,7 @@ public class symm {
 	 * Returns true if array A is symmetric. Returns false otherwise. n is the
 	 * number of elements A contains.
 	 *
-	 * The running time of your algorithm is O( ). You may add a brief explanation
+	 * The running time of your algorithm is O(n). You may add a brief explanation
 	 * here if you wish.
 	 */
 

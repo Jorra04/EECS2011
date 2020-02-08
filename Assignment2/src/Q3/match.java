@@ -31,11 +31,9 @@ public static int match_exh( int[] A, int n )
    // You may define local variables inside this method.
 
    // You may add your own methods/subroutines to this file.
-	outerloop:
 	for(int i = 0; i < n; i ++) {
 		if(A[i] == i) {
-			val = i;
-			break outerloop;
+			return i;
 		}
 	}
 
