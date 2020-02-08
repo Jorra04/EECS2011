@@ -61,18 +61,26 @@ public static boolean sum_rec( int[] A, int n, int k ){
    // You may define local variables inside this method.
 
    // You may add your own methods/subroutines to this file.
-	Set<Integer> mySet = new HashSet<>();
-	for(int i : A) {
-		mySet.add(i);
-	}
-	for(int i = 0; i < A.length; i++) {
-		if(mySet.contains((Integer)k-A[i])) {
-			return true;
-		}
-	}
-	return false;
+	int i = 0;
+	int j = n-1;
+	
+	return sum_recHelper(A, k, i, j);
 
-}  // end sum_rec
+}
+// end sum_rec
+private static boolean sum_recHelper(int[] a, int finder, int i, int j) {
+    if (i == j)
+        return false;
+    if (a[i] + a[j] == finder)
+        return true;
+    if (a[i] + a[j] < finder)
+        return sum_recHelper(a, finder, i + 1, j);
+    return sum_recHelper(a, finder, i, j - 1);
+}
 
 
 } // end class
+
+
+
+
