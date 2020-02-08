@@ -18,7 +18,7 @@ public class match {
  * Returns -1 if there exists no element A[i] such that A[i] == i.
  * n is the number of elements A contains.
  *
- * The running time of your algorithm is O(  ).
+ * The running time of your algorithm is O(n).
  * You may add a brief explanation here if you wish.
  */
 
@@ -31,14 +31,16 @@ public static int match_exh( int[] A, int n )
    // You may define local variables inside this method.
 
    // You may add your own methods/subroutines to this file.
+	outerloop:
 	for(int i = 0; i < n; i ++) {
 		if(A[i] == i) {
 			val = i;
+			break outerloop;
 		}
 	}
 
 	return val;
-} // end match_exh
+	} // end match_exh
 
 
 
@@ -50,7 +52,7 @@ public static int match_exh( int[] A, int n )
  * Returns -1 if there exists no element A[i] such that A[i] == i.
  * n is the number of elements A contains.
  *
- * The running time of your algorithm is O(  ).
+ * The running time of your algorithm is O(logn).
  * You may add a brief explanation here if you wish.
  */
 
@@ -79,7 +81,7 @@ public static int match_dac( int[] A, int n )
 	}
 	
 	return -1;
-}  // end match_dac
+	}  // end match_dac
 
 
 } // end class
