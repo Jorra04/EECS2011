@@ -73,6 +73,16 @@ public class sLinkedList<E>{
 		
 	}
 	
+	public String printLinkedList() {
+		String result = "";
+        Node current = head;
+        while(current != null){
+            result+= current.getElement();
+            current = current.getNext();
+        }
+        return "List: " + result;
+	}
+	
 	
 	
 	
