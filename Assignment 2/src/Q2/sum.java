@@ -58,20 +58,21 @@ public class sum {
 	}
 
 // end sum_rec
-	private static boolean sum_recHelper(int[] a, int finder, int i, int j) {
-		if (i == j) {
+	private static boolean sum_recHelper(int[] a, int val, int i, int j) {
+		if (i == j) { //if i and j are equal, we've traversed the entire array, 
+			//and haven't found a match. 
 			return false;
 		}
 
-		if (a[i] + a[j] == finder) {
+		if (a[i] + a[j] == val) { //if they're equal, return true;
 			return true;
 		}
 
-		if (a[i] + a[j] < finder) {
-			return sum_recHelper(a, finder, i + 1, j);
+		if (a[i] + a[j] < val) {
+			return sum_recHelper(a, val, i + 1, j); //shrink
 		}
 
-		return sum_recHelper(a, finder, i, j - 1);
+		return sum_recHelper(a, val, i, j - 1); // shrink
 	}
 } // end class
 

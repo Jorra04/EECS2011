@@ -5,9 +5,9 @@ import java.util.Arrays;
 /***********************************
 * CSE2011 - Assignment 2
 * File name: kthsmallest.java
-* Author: Last name, first name
-* Email: Your email address
-* CSE number: Your cse number
+* Author: Singh, jorra
+* Email: jorrasingh04@gmail.com
+* CSE number: 215709876
 ************************************/
 
 
@@ -43,7 +43,7 @@ public static int find_kth_smallest( int[] A, int n, int k )
     */
 	int[] b =Arrays.copyOf(A, A.length);
 	
-	return finder(b,0,n-1,k-1);
+	return finder(b,0,n-1,k-1); //fixes indexing problem.
 	
 
 
@@ -63,19 +63,19 @@ public static int find_kth_smallest( int[] A, int n, int k )
 
 	}
 
-	public static int partition(int arr[], int low, int high) {
-		int pivot = arr[high];
+	public static int partition(int a[], int low, int high) {
+		int piv = a[high];
 		int i = (low - 1);
 		for (int j = low; j < high; j++) {
 
-			if (arr[j] < pivot) {
+			if (a[j] < piv) {
 				i++;
 
-				swap(arr, i, j);
+				swap(a, i, j);
 			}
 		}
 
-		swap(arr, high, i + 1);
+		swap(a, high, i + 1);
 		return i + 1;
 	}
 
