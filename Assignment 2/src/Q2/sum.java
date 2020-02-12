@@ -49,7 +49,8 @@ public class sum {
 
 		// You may define local variables inside this method.
 
-		// You may add your own methods/subroutines to this file.
+		// You may add your own methods/subroutines to this file. 
+		//pointers.
 		int i = 0;
 		int j = n - 1;
 
