@@ -1,6 +1,10 @@
 package StackSLL;
 
 public class Main {
+	/*
+	 * A class that tests the linked list 
+	 * implementation of a stack.
+	 */
 
 	public static void main(String[] args) {
 		StackUsingLinkedList stack = new StackUsingLinkedList();
