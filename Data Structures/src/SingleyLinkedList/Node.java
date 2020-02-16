@@ -1,44 +1,15 @@
 package SingleyLinkedList;
 
-public class Node <E>{
-	private E element;
-	private Node<E> next;
+public class Node {
+	Node next;
+	int val;
 	
-	
-	/*
-	 * Constructors
-	 */
-	public Node() {
-		this(null,null);
+	Node() {
+		this.next = null;
+		this.val = 0;
 	}
-	public Node(E e, Node<E> n) {
-		this.element = e;
-		this.next = n;
+	Node(int val) {
+		this.val = val;
+		this.next = null;
 	}
-	
-	
-	/*
-	 * Accessors
-	 */
-	public E getElement() {
-		return this.element;
-	}
-	public Node<E> getNext() {
-		return this.next;
-	}
-	
-	/*
-	 * Modifiers
-	 */
-	public void setElement(E newElem) {
-		this.element = newElem;
-	}
-	public void setNext(Node<E> next) {
-		this.next = next;
-	}
-	
-	public String printer() {
-		return ""+getElement();
-	}
-	
 }

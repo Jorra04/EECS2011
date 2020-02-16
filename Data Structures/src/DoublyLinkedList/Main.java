@@ -9,11 +9,12 @@ public class Main {
 		dl.insertAfter(dl.head.next, 2);
 		dl.insertAfter(dl.head.next.next, 1);
 		dl.insertAfter(dl.head.next.next.next, 0);
+		dl.push(6);
 		
-		dl.printAll();
+		System.out.println(dl.printAll());
 		dl.reverse(dl.head);
 		System.out.println("------------------");
-		dl.printAll();
+		System.out.println(dl.printAll());
 		
 		
 

@@ -12,8 +12,8 @@ public class DoublyLinked {
 	
 	public void push(int data) {
 		Node newNode = new Node(data);
-		newNode.prev = head;
-		newNode.next = null;
+		newNode.prev = null;
+		newNode.next = head;
 		
 		if(head != null) {
 			head.prev = newNode;
@@ -34,15 +34,23 @@ public class DoublyLinked {
 			newNode.next.prev = newNode;
 		}
 	}
-	public void printAll() {
+	public String printAll() {
+		String str = "";
 		Node curr = head;
 		if(head == null) {
 			throw new NullPointerException();
 		}
 		while(curr != null) {
-			System.out.println(curr.data + " ");
+			if(curr.next != null ) {
+				str+= curr.data + " -> ";
+			}
+			else {
+				str+= curr.data;
+			}
+			
 			curr = curr.next;
 		}
+		return str;
 	}
 	public void printMid() {
 		Node slow = head;
