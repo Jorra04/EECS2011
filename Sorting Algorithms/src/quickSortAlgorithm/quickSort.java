@@ -25,6 +25,7 @@ public class quickSort {
             // If current element is smaller than the pivot 
             if (arr[j] < pivot) 
             { 
+            	
                 i++; 
   
                 // swap arr[i] and arr[j] 
