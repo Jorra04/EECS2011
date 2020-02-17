@@ -4,7 +4,6 @@ public class SinglyLinked {
 	Node head;
 	int size;
 	
-	
 	SinglyLinked(){
 		this.head = null;
 		this.size = 0;
