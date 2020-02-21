@@ -8,6 +8,12 @@ public class Main {
 		dl.push(1);
 		dl.push(2);
 		System.out.println(dl.printList());
+		System.out.println("-------------------");
+		dl.append(-1);
+		System.out.println(dl.printList());
+		dl.insertAfter(dl.head, 5);
+		System.out.println(dl.printList());
+		
 	}
 
 }
