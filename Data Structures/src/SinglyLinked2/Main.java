@@ -16,8 +16,11 @@ public class Main {
 		System.out.println(sl.printList());
 		System.out.println(sl.last());
 		
-		SinglyLinked sl2 = new SinglyLinked();
-		System.out.println(sl2.last());
+//		SinglyLinked sl2 = new SinglyLinked();
+//		System.out.println(sl2.last());
+		
+		sl.removeLast();
+		System.out.println(sl.printList());
 	}
 
 }

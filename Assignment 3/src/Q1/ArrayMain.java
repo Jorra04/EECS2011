@@ -46,6 +46,18 @@ public class ArrayMain {
         q.printDeque();  // one element left
 //    System.out.println(q.size());
 //    System.out.println(q.capacity);
+//	q.insertFirst(67899);
+//	q.insertLast(67898 );
+//	q.insertLast(67897 );
+//	q.insertLast(67896 );
+//	q.insertLast(67895 );
+//	q.insertLast(67894 );
+//	q.insertLast(67893 );
+//	q.insertLast(67892 );
+//	q.insertLast(67891 );
+//	q.insertLast(67890 );
+//	q.printDeque();
+	
    }
    
 }

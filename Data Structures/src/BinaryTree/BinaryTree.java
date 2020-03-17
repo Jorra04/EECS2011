@@ -40,6 +40,24 @@ public class BinaryTree {
 		System.out.println(node.val + " ");
 		
 	}
+	void preOrderPrint(Node node) {
+		if(node == null) {
+			return;
+		}
+		System.out.println(node.val);
+		
+		preOrderPrint(node.left);
+		
+		preOrderPrint(node.right);
+	}
+	void inOrderPrint(Node node) {
+		if(node == null) {
+			return;
+		}
+		inOrderPrint(node.left);
+		System.out.println(node.val);
+		inOrderPrint(node.right);
+	}
 	
 	
 }

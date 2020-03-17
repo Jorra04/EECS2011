@@ -57,6 +57,18 @@ public class SinglyLinked {
 		}
 		return head.val;
 	}
+	public int removeLast() {
+		int val = this.tail.val;
+		Node node = this.head;
+		while(node.next.next != null ) {
+			node = node.next;
+		}
+		this.tail = node;
+		this.tail.next = null; //needed depending on your implementation.
+
+		
+		return val;
+	}
 	public String printList() {
 		Node curr = head;
 		String str = "";

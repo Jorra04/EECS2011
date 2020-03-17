@@ -13,6 +13,10 @@ public class BinaryTreeTester {
 		bt.add(9);
 		
 		bt.postOrderPrinter(bt.root);
+		System.out.println("-----------");
+		bt.preOrderPrint(bt.root);
+		System.out.println("-----------");
+		bt.inOrderPrint(bt.root);
 
 	}
 
