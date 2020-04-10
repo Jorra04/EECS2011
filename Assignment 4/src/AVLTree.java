@@ -1,9 +1,9 @@
 /***********************************
 * EECS2011 - Assignment 4
 * File name: AVLTree.java
-* Author: Last name, first name
-* Email: Your email address
-* CSE number: Your cse number
+* Author: Singh, Jorra
+* Email: jorrasingh04@gmail.com
+* CSE number: 215709876
 ************************************/
 
 
@@ -154,50 +154,211 @@ public class AVLTree extends BinarySearchTree implements Dictionary {
    * Output: position of (pointer to) the new root of the subtree that was restructured.
    */
   protected Position restructure( Position xPos ) {
-	  AVLNode x = (AVLNode)xPos;
-	  AVLNode yPos = (AVLNode)parent(x);
-	  AVLNode zPos = (AVLNode)parent(yPos);
-	  if(x == right(yPos) == (yPos == right(zPos))) {
-		  rotate(yPos);
-		  return yPos; 
+
+	// COMPLETE THIS METHOD
+
+	// You may add your own method(s) to this file.
+	  AVLNode x = (AVLNode) xPos;
+	  AVLNode y = (AVLNode) parent(x);
+	  AVLNode z = (AVLNode) parent(y);
+	  
+	  if(y.equals(z.getRight()) && x.equals(y.getRight())) { //we have a single rotation. right oriented.
+//		  leftRotate(z);
+		  AVLNode root = (AVLNode) z.getParent();
+		 
+		  y = (AVLNode) z.getRight();
+		  x = (AVLNode) y.getRight();
+		  AVLNode t2 = (AVLNode) y.getLeft();
+		  
+		  if(root == null) {
+			  this.root = y;
+			  y.setParent(root);
+		  }
+		  else if(root.getLeft() == (z)) {
+			  root.setLeft(y);
+			  y.setParent(root);
+		  }
+		  else if(root.getRight() == (z)) {
+			  root.setRight(y);
+			  y.setParent(root);
+		  }
+		 y.setLeft(z);
+		 y.setRight(x);
+		 x.setParent(y);
+		 z.setParent(y);
+		 if(t2 != null ) {
+			  t2.setParent(z);
+		  }
+		 z.setRight(t2);
+		  return y;
 	  }
-	  else {
-		  rotate(x);
-		  rotate(x);
+	  else if( y.equals(z.getLeft()) && x.equals(y.getLeft()) ) { // we have a single rotation. left oriented.
+//		  rightRotate(z);
+		  AVLNode root = (AVLNode) z.getParent();
+		  
+		  y = (AVLNode) z.getLeft();
+		  x = (AVLNode) y.getLeft();
+		  AVLNode t3 = (AVLNode) y.getRight();
+		  if(root == null) {
+			  this.root = y;
+			  y.setParent(root);
+		  }
+		  else if(root.getLeft() == (z)) {
+			  root.setLeft(y);
+			  y.setParent(root);
+		  }
+		  else if(root.getRight() == (z)) {
+			  root.setRight(y);
+			  y.setParent(root);
+		  }
+		  y.setLeft(x);
+		  y.setRight(z);
+		  z.setParent(y);
+		  x.setParent(y);
+		  if(t3 != null) {
+			  t3.setParent(z);
+		  }
+		  
+		  z.setLeft(t3);
+		  return y;
+	  }
+	  else if( y.equals(z.getRight()) && x.equals(y.getLeft()) ) { //Need a double rotation. R,L
+//		  rightRotate(y);
+		  AVLNode z1  = (AVLNode) y;
+		  AVLNode root = (AVLNode) z1.getParent();
+		  
+		  AVLNode y1 = (AVLNode) z1.getLeft();
+		  AVLNode x1 = (AVLNode) y1.getLeft();
+		  AVLNode t3 = (AVLNode) y1.getRight();
+		  if(root == null) {
+			  this.root = y1;
+			  y1.setParent(root);
+		  }
+		  else if(root.getLeft() == (z1)) {
+			  root.setLeft(y1);
+			  y1.setParent(root);
+		  }
+		  else if(root.getRight() == (z1)) {
+			  root.setRight(y1);
+			  y1.setParent(root);
+		  }
+		  y1.setLeft(x1);
+		  y1.setRight(z1);
+		  z1.setParent(y1);
+		  x1.setParent(y1);
+		  if(t3 != null) {
+			  t3.setParent(z1);
+		  }
+		  
+		  z1.setLeft(t3);
+		  
+		  
+		  //left rotate on z
+		  
+		  AVLNode z2 = (AVLNode) z;
+		  AVLNode root2 = (AVLNode) z2.getParent();
+		 
+		  AVLNode y2= (AVLNode) z2.getRight();
+		  AVLNode x2 = (AVLNode) y2.getRight();
+		  AVLNode t2 = (AVLNode) y2.getLeft();
+		  
+		  if(root2 == null) {
+			  this.root = y2;
+			  y2.setParent(root2);
+		  }
+		  else if(root2.getLeft() == (z2)) {
+			  root2.setLeft(y2);
+			  y2.setParent(root2);
+		  }
+		  else if(root2.getRight() == (z2)) {
+			  root2.setRight(y2);
+			  y2.setParent(root2);
+		  }
+		 y2.setLeft(z2);
+		 y2.setRight(x2);
+		 x2.setParent(y2);
+		 z2.setParent(y2);
+		 if(t2 != null ) {
+			  t2.setParent(z2);
+		  }
+		 z2.setRight(t2);
+		  
 		  return x;
 	  }
-
-  } // restructure
-  protected void rotate(Position p) {
-	  AVLNode x = (AVLNode) p ;
-	  AVLNode y = (AVLNode)x.getParent();
-	  AVLNode z = (AVLNode)y.getParent();
-	  if(z == null) {
-		  this.root = x;
-		  x.setParent(null);
-	  }
-	  else {
-		  relink(z,x,y == z.getLeft());
-	  }
-	  if(x == y.getLeft()) {
-		  relink(y,(AVLNode)x.getRight(),true);
-		  relink(x,y,false);
-	  }
-	  else {
-		  relink(y,(AVLNode)x.getLeft(),false);
-		  relink(x,y,true);
+	  else if( y.equals(z.getLeft()) && x.equals(y.getRight()) ) {//Need double rotation. L,R
+//		  leftRotate(y);
+		  
+		  AVLNode z1 = (AVLNode) y;
+		  AVLNode root1 = (AVLNode) z1.getParent();
+		 
+		  AVLNode y1 = (AVLNode) z1.getRight();
+		  AVLNode x1 = (AVLNode) y1.getRight();
+		  AVLNode t2 = (AVLNode) y1.getLeft();
+		  
+		  if(root1 == null) {
+			  this.root = y1;
+			  y1.setParent(root1);
+		  }
+		  else if(root1.getLeft() == (z1)) {
+			  root1.setLeft(y1);
+			  y1.setParent(root1);
+		  }
+		  else if(root1.getRight() == (z1)) {
+			  root1.setRight(y1);
+			  y1.setParent(root1);
+		  }
+		 y1.setLeft(z1);
+		 y1.setRight(x1);
+		 x1.setParent(y1);
+		 z1.setParent(y1);
+		 if(t2 != null ) {
+			  t2.setParent(z1);
+		  }
+		 z1.setRight(t2);
+//		  
+//		 //right rotate on z
+//		 
+		 AVLNode z2 = (AVLNode) z;
+		  AVLNode root = (AVLNode) z2.getParent();
+		  
+		  AVLNode y2 = (AVLNode) z2.getLeft();
+		  AVLNode x2 = (AVLNode) y2.getLeft();
+		  AVLNode t3 = (AVLNode) y2.getRight();
+		  if(root == null) {
+			  this.root = y2;
+			  y2.setParent(root);
+		  }
+		  else if(root.getLeft() == (z2)) {
+			  root.setLeft(y2);
+			  y2.setParent(root);
+		  }
+		  else if(root.getRight() == (z2)) {
+			  root.setRight(y2);
+			  y2.setParent(root);
+		  }
+		  y2.setLeft(x2);
+		  y2.setRight(z2);
+		  z2.setParent(y2);
+		  x2.setParent(y2);
+		  if(t3 != null) {
+			  t3.setParent(z2);
+		  }
+		  
+		  z2.setLeft(t3);
+//		  rightRotate(z);
+		  
+		  return x;
 	  }
 	  
-  }
+	  
+//should never reach here. should be one of the above four cases
+	return ( xPos );	// replace this line with your code
+
+  } // restructure
   
-  protected void relink(AVLNode parent, AVLNode child, boolean makeLeftChild) {
-	  child.setParent(parent);
-	  if(makeLeftChild) {
-		  parent.setLeft(child);
-	  }
-	  else {
-		  parent.setRight(child);
-	  }
-  }
+  //Use this if we have a left oriented rotation 
+ 
+//  //Use this if we have a right oriented rotation
+
   
 } // end AVLTree class

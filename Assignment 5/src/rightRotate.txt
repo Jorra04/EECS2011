@@ -1,0 +1,30 @@
+  public void rightRotate(Position zPos) { //only need to do something with t3
+	  AVLNode z = (AVLNode) zPos;
+	  AVLNode root = (AVLNode) z.getParent();
+	  
+	  AVLNode y = (AVLNode) z.getLeft();
+	  AVLNode x = (AVLNode) y.getLeft();
+	  AVLNode t3 = (AVLNode) y.getRight();
+	  if(root == null) {
+		  this.root = y;
+		  y.setParent(root);
+	  }
+	  else if(root.getLeft() == (z)) {
+		  root.setLeft(y);
+		  y.setParent(root);
+	  }
+	  else if(root.getRight() == (z)) {
+		  root.setRight(y);
+		  y.setParent(root);
+	  }
+	  y.setLeft(x);
+	  y.setRight(z);
+	  z.setParent(y);
+	  x.setParent(y);
+	  if(t3 != null) {
+		  t3.setParent(z);
+	  }
+	  
+	  z.setLeft(t3);
+	  
+  }
