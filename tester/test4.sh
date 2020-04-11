@@ -3,7 +3,7 @@ echo "Removing All result#.txt files..."
 rm -f result*
 
 javac test1.java
-java test1.java > result1.txt
+java test1 > result1.txt
 echo "==================================TEST1================================="
 res1=$(diff result1.txt SolutionTest1.txt)
 
