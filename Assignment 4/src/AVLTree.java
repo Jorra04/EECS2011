@@ -193,7 +193,7 @@ public class AVLTree extends BinarySearchTree implements Dictionary {
 		  return y;
 	  }
 	  else if( y.equals(z.getLeft()) && x.equals(y.getLeft()) ) { // we have a single rotation. left oriented.
-//		  begin a right rotate on z
+//		 right rotate on z
 		  AVLNode root = (AVLNode) z.getParent();
 		  
 		  y = (AVLNode) z.getLeft();
@@ -223,7 +223,7 @@ public class AVLTree extends BinarySearchTree implements Dictionary {
 		  return y;
 	  }
 	  else if( y.equals(z.getRight()) && x.equals(y.getLeft()) ) { //Need a double rotation. R,L
-//		  begin a right rotate on y
+//		  right rotate on y
 		  AVLNode z1  = (AVLNode) y;
 		  AVLNode root = (AVLNode) z1.getParent();
 		  
